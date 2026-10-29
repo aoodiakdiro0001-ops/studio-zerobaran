@@ -249,6 +249,32 @@ interface StoreProduct {
 
 const PRODUCTS_DATA: StoreProduct[] = [
   {
+    id: 'studio-zerobaran-platform',
+    name: 'Studio-ZeroBaran — منظومة الإنتاج الذاتي',
+    nameEn: 'Autonomous Creative & Production OS Suite',
+    category: 'systems',
+    description: 'استوديو الإنتاج البرمجي والمرئي والترسانة السيبرانية اللامركزية — نبتكر مشاريع عظيمة وأكثر من 1,000,000 منتج وترخيص رقمي.',
+    priceUSD: 49,
+    priceBTC: '0.0007 BTC',
+    features: ['12 Autonomous Engines', 'Multi-Agent Support', 'Zero Monthly Cost', 'Lifetime Updates'],
+    gumroadSlug: 'studio-zerobaran',
+    badge: 'النظام الأساسي 🚀',
+    gradient: 'from-purple-600 via-pink-600 to-cyan-500'
+  },
+  {
+    id: 'baran-security-arsenal',
+    name: 'Baran Security Arsenal Full Suite',
+    nameEn: 'All-in-One Bug Bounty & Recon Super Pack',
+    category: 'cybersecurity',
+    description: 'الحزمة الشاملة الكاملة: تضم أكثر من 67 أداة وسكربت للاستطلاع السيبراني، وفحص الثغرات، وأتمتة البحث عن مكافآت الثغرات.',
+    priceUSD: 199,
+    priceBTC: '0.0030 BTC',
+    features: ['Full Arsenal (67+ Tools)', 'Lifetime Updates', 'Private Telegram Group', 'Source Code Access'],
+    gumroadSlug: 'baran-security-arsenal-suite',
+    badge: 'الحزمة الشاملة 👑',
+    gradient: 'from-violet-600 via-fuchsia-600 to-amber-500'
+  },
+  {
     id: 'phantomlogic-recon',
     name: 'PhantomLogic Recon Pro',
     nameEn: 'Autonomous Attack Surface & Recon Engine',
@@ -295,7 +321,7 @@ const PRODUCTS_DATA: StoreProduct[] = [
     priceUSD: 39,
     priceBTC: '0.0006 BTC',
     features: ['ZATCA TLV QR byte-exact', 'Zero Dependencies', 'Offline PWA Ready', 'Instant PDF Engine'],
-    gumroadSlug: 'hszizz',
+    gumroadSlug: 'baran-fatorabox-os',
     badge: 'مُعتمد 📜',
     gradient: 'from-purple-600 to-indigo-600'
   },
@@ -308,7 +334,7 @@ const PRODUCTS_DATA: StoreProduct[] = [
     priceUSD: 120,
     priceBTC: '0.0018 BTC',
     features: ['1M Context Memory', 'Asymmetric Prefill', 'Multimodal Intake', 'Self-Hosted & Private'],
-    gumroadSlug: 'excalibur-ai-shield',
+    gumroadSlug: 'baranflash-moe-engine',
     badge: 'فائق السرعة ⚡',
     gradient: 'from-yellow-500 to-red-600'
   },
@@ -321,7 +347,7 @@ const PRODUCTS_DATA: StoreProduct[] = [
     priceUSD: 29,
     priceBTC: '0.0005 BTC',
     features: ['60 Engineered Prompts', '227 Variables', 'Zero Dependencies', 'Marketing & Code Ops'],
-    gumroadSlug: 'xhbnyh',
+    gumroadSlug: 'baran-prompt-os-suite',
     gradient: 'from-pink-600 to-purple-600'
   },
   {
@@ -347,19 +373,6 @@ const PRODUCTS_DATA: StoreProduct[] = [
     features: ['Mempool Monitoring', 'Slippage Guard', 'Private RPC Integration', 'Gas Optimizer'],
     gumroadSlug: 'elite-recon-engine',
     gradient: 'from-amber-600 to-yellow-500'
-  },
-  {
-    id: 'baran-security-arsenal',
-    name: 'Baran Security Arsenal Full Suite',
-    nameEn: 'All-in-One Bug Bounty & Recon Super Pack',
-    category: 'cybersecurity',
-    description: 'الحزمة الشاملة الكاملة: تضم أكثر من 67 أداة وسكربت للاستطلاع السيبراني، وفحص الثغرات، وأتمتة البحث عن مكافآت الثغرات.',
-    priceUSD: 199,
-    priceBTC: '0.0030 BTC',
-    features: ['Full Arsenal (67+ Tools)', 'Lifetime Updates', 'Private Telegram Group', 'Source Code Access'],
-    gumroadSlug: 'elite-osint-recon-engine',
-    badge: 'الحزمة الشاملة 👑',
-    gradient: 'from-violet-600 via-fuchsia-600 to-amber-500'
   }
 ];
 

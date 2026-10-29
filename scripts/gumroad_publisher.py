@@ -4,8 +4,8 @@ Gumroad Automated Publisher & Sync Tool
 Author: Baran Avisat
 Studio-ZeroBaran Arsenal Suite
 
-This script uses the Gumroad REST API (https://api.gumroad.com/v2/products)
-to automatically publish tools and products to https://baranavi.gumroad.com.
+This script uses the Gumroad REST API to automatically sync and publish
+all tools from the repository to https://baranavi.gumroad.com.
 """
 
 import os
@@ -31,97 +31,120 @@ STORE_URL = env_vars.get('GUMROAD_STORE_URL', 'https://baranavi.gumroad.com/')
 
 PRODUCTS_CATALOG = [
     {
-        "name": "PhantomLogic Recon Pro — Autonomous Attack Surface Engine",
-        "description": "Enterprise-grade reconnaissance engine with automated subdomain enumeration, WAF posture mapping, and secret leak detection.\n\nAuthor: Baran Avisat\nSupport: baranavisat@gmail.com\nTelegram / WhatsApp: +90 531 326 3722",
-        "price": 7900,  # in cents = $79.00
-        "currency": "usd",
-        "tags": ["recon", "cybersecurity", "bugbounty", "osint"],
+        "name": "Studio-ZeroBaran — منظومة الإنتاج البرمجي والأتمتة الذاتية",
+        "permalink": "studio-zerobaran",
+        "description": "استوديو الإنتاج البرمجي والمرئي والترسانة السيبرانية اللامركزية — نبتكر مشاريع عظيمة وأكثر من 1,000,000 منتج وترخيص رقمي بدعم الدفع بالبيتكوين والتحويل البنكي.\n\nالمستودع الرسمي على GitHub: https://github.com/aoodiakdiro0001-ops/studio-zerobaran\nالدعم الفني المباشر: baranavisat@gmail.com | واتساب: +90 531 326 3722",
+        "price": 4900,
+        "tags": ["studio", "ai", "automation", "zerobaran"]
     },
     {
-        "name": "Elite Gungnir Auditor — Smart Contract Security Suite",
-        "description": "Autonomous defensive code auditor for EVM smart contracts. Detects reentrancy, price oracle manipulation, and logic flaws.\n\nAuthor: Baran Avisat\nSupport: baranavisat@gmail.com",
-        "price": 9900,  # $99.00
-        "currency": "usd",
-        "tags": ["blockchain", "solidity", "audit", "security"],
+        "name": "Baran-Security-Arsenal — الحزمة الأمنية الكاملة لأدوات Bug Bounty",
+        "permalink": "baran-security-arsenal-suite",
+        "description": "الحزمة الأمنية الشاملة الكاملة: تضم أكثر من 67 أداة وسكربت للاستطلاع السيبراني، وفحص الثغرات، وأتمتة البحث عن مكافآت الثغرات.\n\nالمطور: Baran Avisat\nالدعم: baranavisat@gmail.com | +90 531 326 3722",
+        "price": 19900,
+        "tags": ["security", "bugbounty", "recon", "arsenal"]
     },
     {
-        "name": "Code-Shield ZeroBaran — Source Code & Secret Leak Redactor",
-        "description": "Pre-commit and CI/CD secret redactor preventing credentials, private keys, and API tokens from ever leaking to public git.\n\nAuthor: Baran Avisat",
-        "price": 4900,  # $49.00
-        "currency": "usd",
-        "tags": ["git", "devops", "security", "secrets"],
+        "name": "BaranFlash MoE Engine — محرك الذكاء الاصطناعي المحلي (1M Context)",
+        "permalink": "baranflash-moe-engine",
+        "description": "محرك ذكاء اصطناعي محلي خفيف يعمل بكفاءة بسياق ذاكرة ضخم يصل إلى مليون رمز مع استهلاك فائق الانخفاض.\n\nالمطور: Baran Avisat\nالدعم: baranavisat@gmail.com",
+        "price": 12000,
+        "tags": ["ai", "moe", "local-llm", "baranflash"]
     },
     {
-        "name": "Baran FatoraBox OS — ZATCA Phase-1 Arabic Invoicing Engine",
-        "description": "Arabic-first self-hosted invoicing system with byte-exact ZATCA Phase-1 TLV QR codes. Single file, zero dependencies, offline PWA ready.\n\nAuthor: Baran Avisat",
-        "price": 3900,  # $39.00
-        "currency": "usd",
-        "tags": ["zatca", "invoicing", "arabic", "pwa"],
+        "name": "Baran FatoraBox OS — نظام الفوترة الإلكترونية الذاتي (ZATCA)",
+        "permalink": "baran-fatorabox-os",
+        "description": "نظام الفوترة الإلكترونية السحابي والذاتي المتوافق 100% مع معايير هيئة الزكاة والضريبة (ZATCA)، ملف واحد بدون تبعيات.\n\nالمطور: Baran Avisat",
+        "price": 3900,
+        "tags": ["zatca", "invoicing", "arabic", "pwa"]
     },
     {
-        "name": "BaranFlash MoE Engine — 1M Context Local AI",
-        "description": "Sparse MoE-style local AI inference engine with 1M-context memory, asymmetric prefill/decode, and low RAM consumption.\n\nAuthor: Baran Avisat",
-        "price": 12000,  # $120.00
-        "currency": "usd",
-        "tags": ["ai", "moe", "local-llm", "python"],
-    },
-    {
-        "name": "Baran Security Arsenal Full Suite (67+ Tools Pack)",
-        "description": "The complete arsenal of 67+ tools, scripts, and autonomous scanners for security research and bug bounty hunters.\n\nAuthor: Baran Avisat",
-        "price": 19900,  # $199.00
-        "currency": "usd",
-        "tags": ["arsenal", "security", "pentest", "bugbounty"],
+        "name": "Baran PromptOS Suite — مكتبة هندسة الأوامر والبرومبتات الخارقة",
+        "permalink": "baran-prompt-os-suite",
+        "description": "مكتبة هندسة الأوامر والبرومبتات الخارقة الأكثر شمولاً، تحتوي على أكثر من 60 نموذج هندسي متقدم عبر 6 مسارات احترافية.\n\nالمطور: Baran Avisat",
+        "price": 2900,
+        "tags": ["prompt-engineering", "ai", "enterprise", "prompts"]
     }
 ]
 
+def get_existing_products(token):
+    existing = {}
+    url = f"https://api.gumroad.com/v2/products?access_token={token}"
+    while url:
+        try:
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(req) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+                for p in data.get('products', []):
+                    permalink = p.get('custom_permalink') or p.get('short_url', '').split('/')[-1]
+                    existing[permalink] = p
+                    existing[p.get('name')] = p
+                next_url = data.get('next_page_url')
+                if next_url:
+                    url = f"https://api.gumroad.com{next_url}&access_token={token}"
+                else:
+                    url = None
+        except Exception as e:
+            print(f"Error fetching existing products: {e}")
+            break
+    return existing
+
 def publish_product(prod, token):
     url = "https://api.gumroad.com/v2/products"
-    data = {
-        "access_token": token,
-        "name": prod["name"],
-        "description": prod["description"],
-        "price": str(prod["price"]),
-        "currency": prod["currency"],
-        "tags": ",".join(prod.get("tags", [])),
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
     }
-    encoded = urllib.parse.urlencode(data).encode("utf-8")
-    req = urllib.request.Request(url, data=encoded, method="POST")
+    payload = {
+        "name": prod["name"],
+        "price": prod["price"],
+        "description": prod["description"],
+        "custom_permalink": prod.get("permalink"),
+        "tags": prod.get("tags", [])
+    }
+    data = json.dumps(payload).encode('utf-8')
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
     try:
         with urllib.request.urlopen(req) as resp:
-            res_data = json.loads(resp.read().decode("utf-8"))
+            res_data = json.loads(resp.read().decode('utf-8'))
             if res_data.get("success"):
                 p = res_data.get("product", {})
-                print(f"✅ Published: {p.get('name')} -> {p.get('short_url')}")
-                return True
+                print(f"✅ تم النشر بنجاح: {p.get('name')}")
+                print(f"   الرابط المباشر: {p.get('short_url')}")
+                return p
             else:
-                print(f"❌ Failed: {res_data.get('message')}")
-                return False
+                print(f"❌ خطأ: {res_data.get('message')}")
+                return None
     except urllib.error.HTTPError as e:
-        err = e.read().decode("utf-8")
-        print(f"❌ HTTP Error {e.code}: {err}")
-        return False
+        err = e.read().decode('utf-8')
+        print(f"❌ خطأ HTTP {e.code}: {err}")
+        return None
 
 def main():
-    print("=" * 60)
-    print("🚀 Gumroad Tool Publisher — Studio-ZeroBaran")
-    print(f"Target Store: {STORE_URL}")
-    print("=" * 60)
+    print("=" * 65)
+    print("🚀 Gumroad Automated Publisher — Baran Avisat Arsenal")
+    print(f" المتجر المستهدف: {STORE_URL}")
+    print("=" * 65)
 
     if not GUMROAD_TOKEN:
-        print("\n⚠️ GUMROAD_ACCESS_TOKEN is not set in .env")
-        print("\n📋 للبدء بنشر جميع المنتجات تلقائياً على متجرك في Gumroad:")
-        print("1. سجّل الدخول إلى حسابك في Gumroad (https://baranavi.gumroad.com)")
-        print("2. اذهب إلى الإعدادات المتقدمة: https://app.gumroad.com/settings/advanced")
-        print("3. تحت قسم 'Applications' أو 'Developer API'، أنشئ Access Token جديد.")
-        print("4. أضف التوكن إلى ملف .env بالشكل التالي:")
-        print("   GUMROAD_ACCESS_TOKEN=your_token_here")
-        print("5. أعد تشغيل هذا السكربت: python3 scripts/gumroad_publisher.py\n")
-        print("✅ سنقوم فوراً برفع كافة الأدوات وتوليد صفحات البيع بمتجرك مباشرة!")
+        print("\n❌ GUMROAD_ACCESS_TOKEN غير موجود في ملف .env")
         return
 
-    print(f"\nPublishing {len(PRODUCTS_CATALOG)} products...")
+    print("\n🔍 جاري التحقق من المنتجات الحالية على المتجر...")
+    existing = get_existing_products(GUMROAD_TOKEN)
+    print(f"ℹ️ عدد المنتجات الموجودة حالياً: {len(existing)}")
+
+    print("\n🚀 جاري فحص ومزامنة الأدوات والمنتجات الجديدة...")
     for prod in PRODUCTS_CATALOG:
+        perm = prod.get("permalink")
+        name = prod.get("name")
+        if perm in existing or name in existing:
+            print(f"⚡ المنتج موجود بالفعل: {name} (تخطي)")
+            continue
+        print(f"📦 جاري نشر: {name}...")
         publish_product(prod, GUMROAD_TOKEN)
+
+    print("\n✅ تمت المزامنة بنجاح!")
 
 if __name__ == "__main__":
     main()
