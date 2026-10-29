@@ -56,11 +56,11 @@ class AIFleet:
     """Master AI Fleet combining all specialized open models."""
 
     FREE_MODELS = {
-        # OpenRouter 100% Free Tiers
-        "architect": "deepseek/deepseek-r1:free",
-        "coder": "qwen/qwen-2.5-coder-32b-instruct:free",
-        "fast_coder": "meta-llama/llama-3.3-70b-instruct:free",
-        "vision_reasoning": "google/gemini-2.0-flash-exp:free",
+        # Active Verified OpenRouter 100% Free Tiers
+        "architect": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "coder": "cohere/north-mini-code:free",
+        "fast_coder": "nvidia/nemotron-3.5-lightning:free",
+        "general_it": "google/gemma-4-31b-it:free",
         
         # Groq Free Tiers
         "groq_coder": "llama-3.3-70b-versatile",
