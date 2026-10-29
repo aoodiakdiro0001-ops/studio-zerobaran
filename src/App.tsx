@@ -262,6 +262,19 @@ const PRODUCTS_DATA: StoreProduct[] = [
     gradient: 'from-purple-600 via-pink-600 to-cyan-500'
   },
   {
+    id: 'polyglot-streambaran-system',
+    name: 'PolyGlot-StreamBaran — دبلجة وترجمة الفيديو',
+    nameEn: 'Autonomous Video Localization & Neural Dubbing',
+    category: 'ai',
+    description: 'منظومة ذكية متكاملة ومؤتمتة لترجمة وتفريغ ودبلجة مقاطع الفيديو والصوتيات لأكثر من 50 لغة بدقة 99% عبر Whisper و Edge-TTS و FFmpeg.',
+    priceUSD: 49,
+    priceBTC: '0.0007 BTC',
+    features: ['50+ Languages Support', 'Whisper Accurate Sync', 'Natural Neural Dubbing', '4K FFmpeg Pipeline'],
+    gumroadSlug: 'polyglot-streambaran',
+    badge: 'جديد ومميز 🎙️',
+    gradient: 'from-blue-600 via-cyan-500 to-emerald-500'
+  },
+  {
     id: 'baran-security-arsenal',
     name: 'Baran Security Arsenal Full Suite',
     nameEn: 'All-in-One Bug Bounty & Recon Super Pack',
